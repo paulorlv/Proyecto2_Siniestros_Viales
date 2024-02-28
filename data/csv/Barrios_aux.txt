@@ -1,0 +1,3 @@
+Barrio,Barrio_Id
+Constitucion,1-1
+cualquier cosa,0-1
