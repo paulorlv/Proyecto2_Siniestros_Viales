@@ -5,10 +5,10 @@
 
 - [Contexto](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#contexto)
 - [Desarrollo](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#desarrollo)
- - [ETL](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#etl)
+ - [Transformaciones y Análisis Exploratorio de Datos (EDA)](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#transformaciones-y-an%C3%A1lisis-exploratorio-de-datos-eda)
  - [Panel](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#panel)
-- [Informe Final](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#eda)
-- [Conclusiones](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#modelo-de-aprendizaje-autom%C3%A1tico)
+- [Informe Final](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#informe-final)
+- [Conclusiones](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#conclusiones)
 
 ### Contexto
 En este proyecto, el Observatorio de Movilidad y Seguridad Vial (OMSV), un centro de estudio que está bajo la órbita del Ministerio de Transporte del Gobierno de la Ciudad Autónoma de Buenos Aires, nos pide que preparemos un proyecto de análisis de datos, con el fin de generar información que permita a las autoridades locales tomar medidas para reducir el número de fatalidades por accidentes de tránsito. Para ello, nos proporcionan un conjunto de datos sobre homicidios en accidentes de tránsito ocurridos en la Ciudad de Buenos Aires durante el período 2016-2021.
@@ -49,7 +49,7 @@ Se presenta un enfoque en 3 Indicadores Clave de Rendimiento (KPIs) en el panel 
 
 Finalmente, se realiza un reporte en formato WORD con un resumen de análisis realizado con las respectivas conclusiones encontradas durante el trabajo del presente proyecto.
 
-Se puede acceder al reporte por este medio [Modelo](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/INFORME.docx) , donde se explica detalladamente el análisis requerido.
+Se puede acceder al reporte por este medio [Informe](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/INFORME.docx) , donde se explica detalladamente el análisis requerido.
 
 #### Conclusiones
 
