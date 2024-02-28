@@ -24,7 +24,7 @@ Se aplicaron estrategias para manejar datos anidados y se eliminaron columnas ir
 Las tablas de Hechos y Víctimas se unieron mediante un 'merge' para obtener una única tabla con toda la información relevante.
 Se agregó información de una API proporcionada por el gobierno de la Ciudad de Buenos Aires, con información sobre las coordenadas de cada barrio, lo que llevó a la formación de una nueva columna "Barrio".
 
-Los demas detalles del ETL se puede ver en [ETL_steam_games](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/ETL-/1_ETL_steam_games.ipynb) , [ETL_user_reviews](http://https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/ETL-/1_ETL_user_reviews.ipynb "ETL_user_reviews") y [ETL_users_items](http://https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/ETL-/1_ETL_users_items.ipynb "ETL_users_items").
+Los demas detalles del ETL se puede ver en [ETLy EDA](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/tree/main/ETL%20y%20EDA)
 
 #### Feature engineering
 
