@@ -3,49 +3,47 @@
 
 ### Esquema de contenido
 
-- [Contexto]()
-- [Desarrollo](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#desarrollo)
- - [ETL](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#etl)
- - [Feature engineering](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#feature-engineering)
-  - [EDA](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#eda)
-  - [Modelo de aprendizaje automático](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#modelo-de-aprendizaje-autom%C3%A1tico)
-  - [Desarrollo de API](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#desarrollo-de-api)
-  - [Deployment](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#deployment)
-  - [Video](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#video)
+- [Contexto](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#contexto)
+- [Desarrollo](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#desarrollo)
+ - [ETL](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#etl)
+ - [Panel](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#feature-engineering)
+- [EDA](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#eda)
+- [Modelo de aprendizaje automático](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#modelo-de-aprendizaje-autom%C3%A1tico)
 
 ### Contexto
 En este proyecto, el Observatorio de Movilidad y Seguridad Vial (OMSV), un centro de estudio que está bajo la órbita del Ministerio de Transporte del Gobierno de la Ciudad Autónoma de Buenos Aires, nos pide que preparemos un proyecto de análisis de datos, con el fin de generar información que permita a las autoridades locales tomar medidas para reducir el número de fatalidades por accidentes de tránsito. Para ello, nos proporcionan un conjunto de datos sobre homicidios en accidentes de tránsito ocurridos en la Ciudad de Buenos Aires durante el período 2016-2021.
 
 
 ### Desarrollo
-#### ETL
+#### Transformaciones y Análisis Exploratorio de Datos (EDA)
 La Extracción, Transformación y Carga (ETL) se realizaron utilizando la biblioteca Pandas.
 Se aplicaron estrategias para manejar datos anidados y se eliminaron columnas irrelevantes o con muchos valores nulos.
 Las tablas de Hechos y Víctimas se unieron mediante un 'merge' para obtener una única tabla con toda la información relevante.
 Se agregó información de una API proporcionada por el gobierno de la Ciudad de Buenos Aires, con información sobre las coordenadas de cada barrio, lo que llevó a la formación de una nueva columna "Barrio".
 
-Los demas detalles del ETL se puede ver en [ETLy EDA](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/tree/main/ETL%20y%20EDA)
+Los demas detalles del ETL y EDA se puede ver en [ETLy EDA](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/tree/main/ETL%20y%20EDA)
 
-#### Feature engineering
+#### Panel
 
-Uno de los pedidos para este proyecto fue aplicar un análisis de sentimiento a los reviews de los usuarios. Para ello se creó una nueva columna llamada 'sentiment_analysis' que reemplaza a la columna que contiene los reviews donde clasifica los sentimientos de los comentarios con la siguiente escala:
+Se creó un panel en PowerBI destacando los conjuntos de análisis establecidos en el EDA.
 
-0 si es malo,
-1 si es neutral o esta sin review
-2 si es positivo.
-Dado que el objetivo de este proyecto es realizar una prueba de concepto, se realiza un análisis de sentimiento básico utilizando TextBlob que es una biblioteca de procesamiento de lenguaje natural (NLP) en Python. El objetivo de esta metodología es asignar un valor numérico a un texto, en este caso a los comentarios que los usuarios dejaron para un juego determinado, para representar si el sentimiento expresado en el texto es negativo, neutral o positivo.
+ANALISIS TEMPORAL
 
-Esta metodología toma una revisión de texto como entrada, utiliza TextBlob para calcular la polaridad de sentimiento y luego clasifica la revisión como negativa, neutral o positiva en función de la polaridad calculada. En este caso, se consideraron las polaridades por defecto del modelo, el cuál utiliza umbrales -0.2 y 0.2, siendo polaridades negativas por debajo de -0.2, positivas por encima de 0.2 y neutrales entre medio de ambos.
+![](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/Imagenes/ANALISIS%20TEMPORAL.png)
 
-Por otra parte, y bajo el mismo criterio de optimizar los tiempos de respuesta de las consultas en la API y teniendo en cuenta las limitaciones de almacenamiento en el servicio de nube para deployar la API, se realizaron dataframes auxiliares para cada una de las funciones solicitadas. En el mismo sentido, se guardaron estos dataframes en formato parquet que permite una compresión y codificación eficiente de los datos.
+ANALISIS GEOGRAFICO
 
-Todos los detalles del desarrollo se pueden ver en [Feature_Engineering](http://https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/Feature_Engineering.ipynb "Feature_Engineering").
-#### EDA
-Se realizó el EDA a los tres conjuntos de datos sometidos a ETL con el objetivo de identificar las variables que se pueden utilizar en la creación del modelo de recmendación. Para ello se utilizó la librería Pandas para la manipulación de los datos y las librerías Matplotlib y Seaborn para la visualización.
+![](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/Imagenes/ANALISIS%20GEOGRAFICO.png)
 
-En particular para el modelo de recomendación, se terminó eligiendo construir un dataframe específico con el id del usuario que realizaron reviews, los nombres de los juegos a los cuales se le realizaron comentarios y una columna de rating que se construyó a partir de la combinación del análisis de sentimiento y la recomendación a los juegos.
+ANALISIS POR VICTIMA
 
-El desarrollo de este análisis se encuentra en [EDA](http://https://github.com/paulorlv/Proyecto1_SteamGames_Henry/tree/main/EDA "EDA")
+![](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/Imagenes/ANALISIS%20VICTIMAS.png)
+
+Se presenta un enfoque en 3 Indicadores Clave de Rendimiento (KPIs) en el panel basado en el análisis y las conclusiones de cada análisis.
+
+![](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/Imagenes/KPIs.png)
+
+
 
 #### Modelo de aprendizaje automático
 Se crearon dos modelos de recomendación, que generan cada uno, una lista de 5 juegos ya sea ingresando el nombre de un juego o el id de un usuario.
