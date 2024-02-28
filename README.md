@@ -1,9 +1,9 @@
 ![](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/Imagenes/IMG-20240227-WA0143%20(1).jpg)
 
 
-### Esquema de contenido:
-- [Introduccion](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#introduccion)
-- [Contexto](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#contexto)
+### Esquema de contenido
+
+- [Contexto]()
 - [Desarrollo](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#desarrollo)
  - [ETL](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#etl)
  - [Feature engineering](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#feature-engineering)
@@ -13,18 +13,18 @@
   - [Deployment](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#deployment)
   - [Video](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/README.md#video)
 
-### Introduccion
-Este proyecto simula el rol de un MLOps Engineer, es decir, la combinación de un Data Engineer y Data Scientist, para la plataforma multinacional de videojuegos Steam. Para su desarrollo, se entregan unos datos y se solicita un Producto Mínimo Viable que muestre una API deployada en un servicio en la nube y la aplicación de dos modelos de Machine Learning, por una lado, un análisis de sentimientos sobre los comentarios de los usuarios de los juegos y, por otro lado, la recomendación de juegos a partir de dar el nombre de un juego y/o a partir de los gustos de un usuario en particular.
-
 ### Contexto
+En este proyecto, el Observatorio de Movilidad y Seguridad Vial (OMSV), un centro de estudio que está bajo la órbita del Ministerio de Transporte del Gobierno de la Ciudad Autónoma de Buenos Aires, nos pide que preparemos un proyecto de análisis de datos, con el fin de generar información que permita a las autoridades locales tomar medidas para reducir el número de fatalidades por accidentes de tránsito. Para ello, nos proporcionan un conjunto de datos sobre homicidios en accidentes de tránsito ocurridos en la Ciudad de Buenos Aires durante el período 2016-2021.
 
-Steam es una plataforma de distribución digital de videojuegos desarrollada por Valve Corporation. Fue lanzada en septiembre de 2003 como una forma para Valve de proveer actualizaciones automáticas a sus juegos, pero finalmente se amplió para incluir juegos de terceros. Cuenta con más de 325 millones de usuarios y más de 25.000 juegos en su catálogo. Es importante tener en cuenta que las cifras publicadas por SteamSpy son hasta el año 2017, porque a principios de 2018 Steam limitó la forma de obtener estadísticas, por eso no hay datos tan precisos.
 
 ### Desarrollo
 #### ETL
-Se realizó la extracción, transformación y carga (ETL) de los tres conjuntos de datos entregados. Dos de los conjuntos de datos se encontraban anidados, es decir había columnas con diccionarios o listas de diccionarios, por lo que aplicaron distintas estrategias para transformar las claves de esos diccionarios en columnas. Luego se rellenaron algunos nulos de variables necesarias para el proyecto, se borraron columnas con muchos nulos o que no aportaban al proyecto, para optimizar el rendimiento de la API y teneniendo en cuenta las limitaciones de almacenamiento del deploy. Para las transformaciones se utilizó la librería Pandas.
+La Extracción, Transformación y Carga (ETL) se realizaron utilizando la biblioteca Pandas.
+Se aplicaron estrategias para manejar datos anidados y se eliminaron columnas irrelevantes o con muchos valores nulos.
+Las tablas de Hechos y Víctimas se unieron mediante un 'merge' para obtener una única tabla con toda la información relevante.
+Se agregó información de una API proporcionada por el gobierno de la Ciudad de Buenos Aires, con información sobre las coordenadas de cada barrio, lo que llevó a la formación de una nueva columna "Barrio".
 
-Los detalles del ETL se puede ver en [ETL_steam_games](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/ETL-/1_ETL_steam_games.ipynb) , [ETL_user_reviews](http://https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/ETL-/1_ETL_user_reviews.ipynb "ETL_user_reviews") y [ETL_users_items](http://https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/ETL-/1_ETL_users_items.ipynb "ETL_users_items").
+Los demas detalles del ETL se puede ver en [ETL_steam_games](https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/ETL-/1_ETL_steam_games.ipynb) , [ETL_user_reviews](http://https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/ETL-/1_ETL_user_reviews.ipynb "ETL_user_reviews") y [ETL_users_items](http://https://github.com/paulorlv/Proyecto1_SteamGames_Henry/blob/main/ETL-/1_ETL_users_items.ipynb "ETL_users_items").
 
 #### Feature engineering
 
