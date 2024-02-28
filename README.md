@@ -9,7 +9,7 @@
  - [Panel](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#panel)
 - [Informe Final](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#informe-final)
 - [Conclusiones](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#conclusiones)
-- [Recursos](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#conclusiones)
+- [Recursos](https://github.com/paulorlv/Proyecto2_Siniestros_Viales/blob/main/README.md#recursos)
 
 ### Contexto
 En este proyecto, el Observatorio de Movilidad y Seguridad Vial (OMSV), un centro de estudio que está bajo la órbita del Ministerio de Transporte del Gobierno de la Ciudad Autónoma de Buenos Aires, nos pide que preparemos un proyecto de análisis de datos, con el fin de generar información que permita a las autoridades locales tomar medidas para reducir el número de fatalidades por accidentes de tránsito. Para ello, nos proporcionan un conjunto de datos sobre homicidios en accidentes de tránsito ocurridos en la Ciudad de Buenos Aires durante el período 2016-2021.
